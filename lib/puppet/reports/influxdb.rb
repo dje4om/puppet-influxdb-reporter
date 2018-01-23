@@ -17,6 +17,7 @@ Puppet::Reports.register_report(:influxdb) do
   raise(Puppet::ParseError, "InfluxDB report config file #{configfile} not readable") unless File.exist?(configfile)
   config = YAML.load_file(configfile)
   INFLUXDB_DEBUG = config[:influxdb_debug]
+  INFLUXDB_ASYNC = config[:influxdb_async]
   INFLUXDB_SERVER = config[:influxdb_server]
   INFLUXDB_PORT = config[:influxdb_port]
   INFLUXDB_RETRY = config[:influxdb_retry]
@@ -37,7 +38,8 @@ Puppet::Reports.register_report(:influxdb) do
       password: INFLUXDB_PASS,
       port: INFLUXDB_PORT,
       server: INFLUXDB_SERVER,
-      retry: INFLUXDB_RETRY
+      retry: INFLUXDB_RETRY,
+      async: INFLUXDB_ASYNC
     })
     # Metrics from agents
     # Always sent if agent run successfuly
