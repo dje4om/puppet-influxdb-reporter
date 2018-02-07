@@ -17,6 +17,7 @@ group :test do
   gem 'simplecov-console'
   gem 'semantic_puppet'
   gem 'public_suffix', '<= 1.4.6' if RUBY_VERSION < '2.0.0'
+  gem 'public_suffix', '<= 2.0.5' if RUBY_VERSION < '2.1.0'
   gem 'safe_yaml', '~> 1.0.4' if RUBY_VERSION >= '2.2.0'
 
   gem "puppet-lint-absolute_classname-check"
