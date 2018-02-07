@@ -32,7 +32,7 @@ Requirements
 This has been tested in production with these versions :
 
 * Puppet 3.8.x to Puppet 4.10.x
-* PuppetServer 1.1.x to PuppetServer 2.3.x
+* PuppetServer 1.1.x to PuppetServer 2.8.x
 * InfluxDB 0.9.4.2 to InfluxDB 1.3.x
 * Gem influxdb 0.2.4 to influxdb 0.3.x
 

@@ -82,7 +82,7 @@ Puppet::Reports.register_report(:influxdb) do
             Puppet.info "InfluxDB Reports - DEBUG - Time Drift between current time and event time in report: #{Time.now - val.time} ms"
           end
           event = true
-          data = {
+          influx_data = {
            series: INFLUXDB_EVENTS_MEASUREMENT,
            values: { resource: data.resource.to_s,
                      event:"#{data.resource_type} #{data.title} #{val}",
@@ -93,7 +93,7 @@ Puppet::Reports.register_report(:influxdb) do
            # Push event at time it occurs from report
            timestamp: val.time.to_i
           }
-          events_data << data
+          events_data << influx_data
 	      end
 	    end
       if INFLUXDB_DEBUG
